@@ -28,7 +28,7 @@ public class SalesPerson extends Employee{
         if (Objects.isNull(bonus)){
             throw new IllegalArgumentException();
         }
-        if(percent >= 100 && percent < 200) {
+        if(percent >= 100 && percent <= 199) {
             bonus = bonus.add(bonus);
         } else {
             bonus = bonus.add(bonus).add(bonus);

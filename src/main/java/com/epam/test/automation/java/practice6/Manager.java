@@ -22,7 +22,7 @@ public class Manager extends Employee{
         if (Objects.isNull(bonus)){
             throw new IllegalArgumentException();
         }
-        if (clientAmount >= 100 && clientAmount < 150) {
+        if (clientAmount >= 100 && clientAmount <= 149) {
             bonus = (bonus).add(new BigDecimal(500));
         }
         else {

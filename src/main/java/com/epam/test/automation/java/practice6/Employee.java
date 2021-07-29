@@ -54,12 +54,17 @@ public class Employee {
         if (bonus.compareTo(BigDecimal.ZERO) <= 0){
             throw new IllegalArgumentException();
         }
-
+        if (bonus.signum() == -1){
+            throw new IllegalArgumentException();
+        }
         this.bonus = bonus;
     }
 
     public BigDecimal toPay(){
         if (Objects.isNull(bonus)){
+            throw new IllegalArgumentException();
+        }
+        if (bonus.signum() == -1){
             throw new IllegalArgumentException();
         }
         return salary.add(bonus);
